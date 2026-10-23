@@ -18,19 +18,30 @@ def test_production_requires_strong_jwt_secret():
 def test_missing_app_env_fails_closed_in_production(monkeypatch):
     for name in (
         "APP_ENV",
-        "JWT_SECRET",
         "CORS_ORIGINS",
         "DATABASE_URL",
         "DATABASE_PASSWORD",
     ):
         monkeypatch.delenv(name, raising=False)
+    monkeypatch.setenv("JWT_SECRET", "short")
 
     with pytest.raises(ValidationError, match="unique JWT_SECRET"):
         Settings(_env_file=None)
 
 
+def test_jwt_secret_is_required_in_development(monkeypatch):
+    monkeypatch.delenv("JWT_SECRET", raising=False)
+
+    with pytest.raises(ValidationError, match="jwt_secret"):
+        Settings(_env_file=None, app_env="development")
+
+
 def test_local_development_must_be_explicit_when_env_file_is_disabled():
-    settings = Settings(_env_file=None, app_env="development")
+    settings = Settings(
+        _env_file=None,
+        app_env="development",
+        jwt_secret="development-test-secret",
+    )
 
     assert settings.app_env == "development"
 

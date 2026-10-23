@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     database_url: str = "postgresql+psycopg://lifeline_app@127.0.0.1:5432/lifeline_ai_dev"
     database_password: SecretStr | None = None
     test_database_url: str | None = None
-    jwt_secret: str = "development-only-change-this-secret"
+    jwt_secret: str
     jwt_expire_minutes: int = 60
     cors_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
     app_env: Literal["development", "production"] = "production"
@@ -81,7 +81,6 @@ class Settings(BaseSettings):
     def validate_security_settings(self):
         if self.app_env == "production" and (
             len(self.jwt_secret) < 32
-            or self.jwt_secret == "development-only-change-this-secret"
             or self.jwt_secret == "replace-with-a-long-random-secret-before-use"
         ):
             raise ValueError("Production requires a unique JWT_SECRET of at least 32 characters.")
