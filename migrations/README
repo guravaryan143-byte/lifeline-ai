@@ -1,0 +1,7 @@
+The Alembic chain starts with revision `20261020_00`, which creates the
+application tables and enum types. Revision `20261021_01` then adds query
+indexes. Inspect the target database and Alembic revision before applying this
+chain; an existing schema must not be stamped or migrated without review.
+
+The initial migration is intentionally irreversible. Index removal is also
+disabled to prevent accidental schema changes during downgrades.

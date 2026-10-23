@@ -1,0 +1,31 @@
+text,label
+"There is a deep pothole near the campus gate",road_hazard
+"A traffic signal is not working at the junction",road_hazard
+"A road is blocked after a minor collision",road_hazard
+"Loose gravel is creating a hazard on the road",road_hazard
+"Vehicles are stuck because the road is flooded",road_hazard
+"A student has a bleeding injury and needs medical assistance",medical_assistance
+"Someone is unconscious near the library",medical_assistance
+"Need first aid for an injured person",medical_assistance
+"A person fell and may have a broken arm",medical_assistance
+"Someone needs urgent medical attention",medical_assistance
+"Smoke is coming from the electrical room",fire_environmental
+"There is a small fire in a waste bin",fire_environmental
+"Strong gas smell near the cafeteria",fire_environmental
+"Water is flooding the ground floor after heavy rain",fire_environmental
+"A chemical spill has occurred in the lab",fire_environmental
+"A pipe has burst beside the hostel",infrastructure_damage
+"A broken power line is hanging near the walkway",infrastructure_damage
+"Part of the boundary wall has collapsed",infrastructure_damage
+"The footbridge railing is damaged",infrastructure_damage
+"A ceiling panel fell in the classroom",infrastructure_damage
+"Someone reported threatening behavior near the entrance",public_safety
+"The campus walkway is poorly lit and feels unsafe",public_safety
+"An unknown person is trying to enter a restricted area",public_safety
+"Harassment was reported near the parking area",public_safety
+"A security concern was reported outside the auditorium",public_safety
+"Found a lost water bottle in the canteen",other
+"The classroom projector is not working",other
+"Requesting information about the library schedule",other
+"A notice board needs updating",other
+"There is litter near the sports field",other
