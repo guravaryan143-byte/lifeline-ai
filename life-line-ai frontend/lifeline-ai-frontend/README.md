@@ -17,7 +17,7 @@ Open two VS Code terminals:
 **Terminal 1 — backend** (from the `lifeline-ai-backend` directory):
 
 ```powershell
-& '..\.venv\Scripts\Activate.ps1'
+& '.\.venv\Scripts\Activate.ps1'
 python run.py
 ```
 
